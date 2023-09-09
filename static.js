@@ -5,6 +5,10 @@ class user{
         this.age=age;
     
     }
+
+    static compareAge(user1,user2){
+        return user1.age-user2.age
+    }
 }
 
 const user1= new user('mohit',27)
@@ -14,5 +18,5 @@ const user4= new user('tohit',17)
 
 
 const users=[user1,user2,user3,user4]
-users.sort((a,b)=>a.age-b.age)
+users.sort(user.compareAge)
 console.log(users)
