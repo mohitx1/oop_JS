@@ -17,7 +17,7 @@ class BankAccount{
           this.#balance-=amount;
       };
 
-      setBalance(amount){
+      set balance(amount){
         if (isNaN(amount)){
             throw new Error('Amount is Not a valid input')
         }else{
@@ -28,7 +28,7 @@ class BankAccount{
       }
     }
 
-      getBalance(){
+      get balance(){
         return this.#balance
       }
   };
@@ -57,5 +57,10 @@ const obj1= new BankAccount('Mohit',50000);
 
 // console.log(obj1.getBalance())
 
-console.log(obj1.setBalance('22'));
-console.log(obj1.getBalance());
+// console.log(obj1.setBalance('22'));
+// console.log(obj1.getBalance());
+
+////modified code to use inbuilt get and set of JS upper code will not execute you have to change to name of the function to execute above code to setBalance and getBalance
+
+console.log(obj1.balance)// this will call the get function automatically
+console.log(obj1.set=44)//only works when we use the default getter and setter function of JS otherwise throw an error
