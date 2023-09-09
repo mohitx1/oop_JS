@@ -41,7 +41,12 @@ class CurrentAccount extends BankAccount{
       super(customerName,balance);
   }
 
+  #calculateIntrest(amount){
+    console.log('calculating interest');
+  }
+
   takeBuisnessLoan(amount){
+      this.#calculateIntrest(amount);
       console.log('Taking Buisness loan:' + amount);
   }
 }
@@ -65,3 +70,8 @@ const obj1= new BankAccount('Mohit',50000);
 console.log(obj1.balance)// this will call the get function automatically//-->getter
 obj1.balance=44 
 console.log(obj1)//only works when we use the default getter and setter function of JS otherwise throw an error
+
+
+const obj2=new CurrentAccount('alok',2000)
+obj2.takeBuisnessLoan(4000)
+// obj2.#calculateIntrest() //cannt call private fields
